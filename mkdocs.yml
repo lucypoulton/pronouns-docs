@@ -1,12 +1,12 @@
-site_name: 'Lucy Docs Template'
+site_name: 'ProNouns Docs'
 
 theme:
   name: "mkdocs"
-  hljs_style: "github-dark"
+  hljs_style: "darcula"
 
 extra_css:
   - stylesheets/lucy.css
 
 nav:
   - Index: index.md
-  - Example: "https://lucypoulton.net"
+  - Setup: setup.md

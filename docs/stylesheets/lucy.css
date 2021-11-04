@@ -27,6 +27,10 @@ code {
     border-radius: 4px;
 }
 
+code, code * {
+    font-family: "Roboto Mono", monospace !important;
+}
+
 pre > code {
     padding: 0.5em;
     text-align: left;
@@ -45,7 +49,7 @@ pre {
 
 .hljs-comment {
     color: #aaa;
-    font-style: italic;
+    font-family: "Work Sans", sans-serif !important;
 }
 
 .bs-sidebar .nav > li > a {
@@ -64,4 +68,32 @@ hr {
 footer {
     color: #aaaaaa;
     font-size: 0.8em;
+}
+
+div[role=main] a {
+    text-decoration: underline;
+}
+
+.modal-content {
+    background: #222222;
+}
+
+.modal-header {
+    border: none;
+}
+
+.modal-footer {
+    display: none;
+}
+
+
+.form-control {
+    background: #222 !important;
+    border-radius: 0.25em;
+    border: 1px solid #444 !important;
+    color: white !important;
+}
+
+.form-control:focus {
+    box-shadow: none;
 }

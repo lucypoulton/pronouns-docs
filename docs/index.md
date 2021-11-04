@@ -1,17 +1,9 @@
-# Welcome to MkDocs
+## ProNouns Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Hi! I'm glad that you've chosen to install ProNouns on your server. 
+This manual aims to show you everything you need to use the plugin, 
+and will be updated as the plugin gets updated.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+If there's anything that you need help with, or something you'd like
+to see added to the plugin, stop by my [Discord server](https://discord.gg/8GU6dsRss3) 
+and I'll try my best. :)
