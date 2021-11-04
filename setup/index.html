@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Setup - ProNouns Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
+        <link href="../stylesheets/lucy.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ProNouns Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Index</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Setup</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../papi/" class="nav-link">Placeholders</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../formats/" class="nav-link">Formats</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../papi/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#pronouns-cloud" class="nav-link">ProNouns Cloud</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#using-mysql" class="nav-link">Using MySQL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#moderation-and-admin-commands" class="nav-link">Moderation and admin commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="installation">Installation</h2>
+<p>Installing the plugin is super simple:</p>
+<ul>
+<li>Download the plugin from <a href="https://lucypoulton.net/pronouns">https://lucypoulton.net/pronouns</a> - take care to choose 
+  the correct file for your server platform.</li>
+<li>Place the downloaded plugin into your server's plugins folder.</li>
+<li>(Bukkit-based servers only) Optionally install PlaceholderAPI.</li>
+<li>Restart your server.</li>
+</ul>
+<p>You're done! The plugin has a sane default configuration and will work "out of the box", 
+but there are some settings you may want to change. See the next page for more info.</p>
+<h2 id="pronouns-cloud">ProNouns Cloud</h2>
+<p><a href="https://pn.lucypoulton.net">ProNouns Cloud</a> is a service that defines commonly used neopronouns so people don't need to
+type out the entire thing every time. By default, recent versions of ProNouns (2.0.0+) will automatically and anonymously
+send pronoun sets that aren't in the list back to the server, subject to manual moderation on my end. If you don't wish 
+to participate in this, you can opt out from the config:</p>
+<pre><code class="language-yaml"># ProNouns Cloud-related settings
+cloud:
+  # Should the plugin regularly download the list of pronouns from the server and make them available to players?
+  sync: true
+  # Should the plugin anonymously submit unrecognised sets back to the server?
+  upload: true
+</code></pre>
+<p>When <code>sync: true</code>, the list will be regularly downloaded from the server, and placed into a file called <code>pronouns.json</code>
+at the root of the plugin's config directory. It can also be manually updated by using the command <code>/pn cloud sync</code> or by
+downloading the file from <a href="https://pn.lucypoulton.net">https://pn.lucypoulton.net</a>.</p>
+<h2 id="using-mysql">Using MySQL</h2>
+<p>ProNouns supports MySQL to synchronise pronouns across multiple servers. 
+You'll need to create a user and database for it (note this step may vary depending on your hosting provider, 
+contact them if in doubt):</p>
+<pre><code class="language-sql">CREATE DATABASE pronouns;
+CREATE USER pronouns@localhost IDENTIFIED BY 'a long, secure password';
+GRANT ALL PRIVILEGES ON pronouns.* TO pronouns@localhost;
+FLUSH PRIVILEGES;
+</code></pre>
+<p>Then in the ProNouns config, add your user, database and password:</p>
+<pre><code class="language-yaml">connection: 'mysql' # remember to set this!
+mysql:
+  host: '127.0.0.1'
+  port: 3306
+  database: 'pronouns'
+  username: 'pronouns'
+  password: 'your password here'
+</code></pre>
+<h2 id="moderation-and-admin-commands">Moderation and admin commands</h2>
+<p>To allow a player to act as a moderator, grant the permission <code>pronouns.admin</code>. This will do the following:</p>
+<ul>
+<li>Grants access to admin commands (<code>setother</code>, <code>clearother</code>, <code>reload</code>, <code>cloud</code>)</li>
+<li>Player is notified when a player without the bypass permission tries to use a set blocked by the filter</li>
+<li>Player is notified when an update becomes available</li>
+</ul>
+<p>It's recommended to also grant <code>pronouns.bypass</code> to allow these players to bypass the filter in case of a false positive.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright © Lucy Poulton 2021. All rights reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

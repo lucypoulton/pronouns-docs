@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Formats - ProNouns Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
+        <link href="../stylesheets/lucy.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ProNouns Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Index</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../setup/" class="nav-link">Setup</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../papi/" class="nav-link">Placeholders</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Formats</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../papi/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#formats" class="nav-link">Formats</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-canonical-format" class="nav-link">The canonical format</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#setting-your-pronouns" class="nav-link">Setting your pronouns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="formats">Formats</h1>
+<p>The English language is a pain. I've tried to make this a simple as possible to understand, but sadly computers are 
+awful at interpreting complex and often ambiguous language, so it's a little complicated.</p>
+<h2 id="the-canonical-format">The canonical format</h2>
+<p>Every pronoun set that the plugin uses has a canonical format. Even if you don't see or interact with it, every set has
+one of these, either hardcoded into the plugin, the config or the cloud database. It looks like this:</p>
+<h5 id="subjectiveobjectiveprogressivepossessive-adjectivepossessive-pronounreflexive">subjective/objective/progressive/possessive adjective/possessive pronoun/reflexive</h5>
+<h5 id="subjective">Subjective</h5>
+<p><strong>They</strong> will do it if you ask nicely.</p>
+<h5 id="objective">Objective</h5>
+<p>I'd really love to get to know <strong>them</strong>.</p>
+<h5 id="progressive">Progressive</h5>
+<p><strong>They're</strong> a very cool person.</p>
+<p>(This isn't actually a pronoun, instead being a contraction of the subjective and conjugated verb "to be". 
+It's just helpful to have.)</p>
+<h5 id="possessive-adjective">Possessive adjective</h5>
+<p>I hope <strong>their</strong> day is going well.</p>
+<h5 id="possessive-pronoun">Possessive pronoun</h5>
+<p>Whose is that? Oh, it's <strong>theirs</strong>.</p>
+<h5 id="reflexive">Reflexive</h5>
+<p>This person should be really proud of <strong>themself</strong>.</p>
+<p>Writing out the canonical format can be a little confusing, so <a href="https://pn.lucypoulton.net/add">I wrote a webpage</a> as 
+part of the cloud to simplify it. Complete the sentences by filling out the boxes and it'll do the rest for you.</p>
+<h2 id="setting-your-pronouns">Setting your pronouns</h2>
+<p>(if you're here from a plugin help link, welcome!)</p>
+<p>Fortunately, with common pronouns you don't have to worry about the canonical format - the plugin will try its best to
+match anything with a set. </p>
+<p>For example, <code>she</code>, <code>they</code>, <code>he/him</code>, <code>they/fae/she</code> and <code>any</code> are all understood by the plugin just fine.</p>
+<p>There are situations where the plugin has multiple sets to choose from, for example <code>xe</code>. At the time of writing, the
+database contains two variations on this set, <code>xe/xem/xe’s/xyr/xyrs/xemself</code> and <code>xe/xer/xe's/xer/xers/xerself</code>. It will
+pick one at random to use and inform you that it couldn't figure out which one you wanted. In this case, add more pronouns
+on the end until it's no longer ambiguous, or use the canonical format.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright © Lucy Poulton 2021. All rights reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
