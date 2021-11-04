@@ -28,7 +28,8 @@ cloud:
 ```
 
 When `sync: true`, the list will be regularly downloaded from the server, and placed into a file called `pronouns.json`
-at the root of the plugin's config directory. It can also be manually updated by downloading the file from <https://pn.lucypoulton.net>.
+at the root of the plugin's config directory. It can also be manually updated by using the command `/pn cloud sync` or by
+downloading the file from <https://pn.lucypoulton.net>.
 
 ## Using MySQL
 
@@ -58,7 +59,7 @@ mysql:
 
 To allow a player to act as a moderator, grant the permission `pronouns.admin`. This will do the following:
 
-- Grants access to admin commands (`setother`, `clearother`, `reload`)
+- Grants access to admin commands (`setother`, `clearother`, `reload`, `cloud`)
 - Player is notified when a player without the bypass permission tries to use a set blocked by the filter
 - Player is notified when an update becomes available
 

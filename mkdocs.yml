@@ -1,5 +1,7 @@
 site_name: 'ProNouns Docs'
 
+copyright: "Copyright © Lucy Poulton 2021. All rights reserved."
+
 theme:
   name: "mkdocs"
   hljs_style: "darcula"
@@ -10,3 +12,5 @@ extra_css:
 nav:
   - Index: index.md
   - Setup: setup.md
+  - Placeholders: papi.md
+  - Formats: formats.md
