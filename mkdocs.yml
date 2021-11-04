@@ -1,0 +1,12 @@
+site_name: 'Lucy Docs Template'
+
+theme:
+  name: "mkdocs"
+  hljs_style: "github-dark"
+
+extra_css:
+  - stylesheets/lucy.css
+
+nav:
+  - Index: index.md
+  - Example: "https://lucypoulton.net"
